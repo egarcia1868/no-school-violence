@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+/***************************/
+/*        GENERAL          */
+/***************************/
+
+@font-face {
+  src: url(./assets/fonts/omnes-regular-webfont.ttf);
+  font-family: omnes, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  max-width: 2600px;
+  min-width: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/***************************/
+/*         HEADER          */
+/***************************/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.header{
+
+  background-image: url(./assets/nsv_header1.png);
+  background-repeat: no-repeat;
+  display:flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 5px 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/***************************/
+/*          MAIN           */
+/***************************/
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mainframe{
+  width: 50%;
+  margin: 80px auto;
+  text-align: center;
+  font-family: omnes, sans-serif;
 }
