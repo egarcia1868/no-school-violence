@@ -32,7 +32,6 @@ const Form = (props) => {
   const removeBehavior = id => {
     const behaviors = selectedBehaviors.filter(behavior => behavior.id !== id);
     setSelectedBehaviors(behaviors)
-    console.log(id)
   }
 
   const handleFormSubmit = event => {
