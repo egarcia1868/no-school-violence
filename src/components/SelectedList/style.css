@@ -1,0 +1,18 @@
+/* table {
+  min-width: 300px;
+  min-height: 60px;
+}
+
+tr {
+  background: whitesmoke;
+}
+
+tbody {
+  max-height: 500px;
+} */
+
+ul {
+  position: relative;
+  overflow-y: scroll;
+  max-height: 500px;
+}
