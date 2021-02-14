@@ -3,7 +3,7 @@ import "./style.css";
 
 const SelectedList = (props) => {
   return (
-    <li className="list-group-item">{props.value}</li>
+    <li onDoubleClick={() => props.removeBehavior(props.id)} className="list-group-item">{props.value}</li>
   )
 }
 
