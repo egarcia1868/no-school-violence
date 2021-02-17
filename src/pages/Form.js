@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import SelectedList from "../components/SelectedList";
+import Missions from '../components/Missions/Missions';
 
 const Form = (props) => {
   const [search, setSearch] = useState("");
