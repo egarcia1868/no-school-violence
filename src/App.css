@@ -12,6 +12,12 @@ body{
   min-width: 300px;
 }
 
+h1{
+  font-family: omnes, sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+}
+
 /***************************/
 /*         HEADER          */
 /***************************/
