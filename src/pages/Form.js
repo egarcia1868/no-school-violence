@@ -25,8 +25,13 @@ const Form = (props) => {
       }
     })
     if (found === false) { 
-      setSelectedBehaviors( selectedBehaviors.concat({value : search.toLowerCase(), id: idCount}));
-      setIdCount(idCount+1);
+      if (search.length === 0){
+        alert("Please, enter a behavior to continue.");
+      }
+      else {
+        setSelectedBehaviors( selectedBehaviors.concat({value : search.toLowerCase(), id: idCount}));
+        setIdCount(idCount+1);
+      }
   };
   }
 
@@ -70,7 +75,8 @@ const Form = (props) => {
         className="navbar-brand" 
         to="/results"
       >
-        After filling the form we'll submit the behavior traits to the backend, get the matches and then display them on the following page
+          <button>Submit</button>
+          {/*After filling the form we'll submit the behavior traits to the backend, get the matches and then display them on the following page*/}
       </Link>
     </section>
   )
