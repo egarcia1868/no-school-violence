@@ -23,7 +23,7 @@ const SearchBar = (props) => {
             <option value={behavior} key={i} />
           ))}
         </datalist>
-        <button style={{margin:"1% 0 2%"}} onClick={props.handleSearchSubmit} className="btn btn-success">
+        <button style={{margin:"3% auto"}} onClick={props.handleSearchSubmit} className="btn btn-success">
           Add behavior
         </button>
       </div>
