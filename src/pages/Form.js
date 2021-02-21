@@ -17,22 +17,19 @@ const Form = (props) => {
 
   const handleSearchSubmit = event => {
     event.preventDefault();
-    //at this point I will need to move the entered behavior into the box on the right
-    let found = false;
+    //alreadyExists will change to true if the behavior is found in the selectedBehaviors array
+    let alreadyExists = false;
     selectedBehaviors.forEach(behavior => {
       if (behavior.value === search.toLowerCase() && search.trim() !== "") {
-        found = true;
+        alreadyExists = true;
       }
     })
-    if (found === false) { 
-      if (search.length === 0){
-        alert("Please, enter a behavior to continue.");
-      }
-      else {
+    if (alreadyExists === false) { 
+      if (search.length > 0){
         setSelectedBehaviors( selectedBehaviors.concat({value : search.toLowerCase(), id: idCount}));
         setIdCount(idCount+1);
       }
-  };
+    };
   }
 
   const removeBehavior = id => {
@@ -48,15 +45,16 @@ const Form = (props) => {
   return (
     <section className="mainframe">
       <h1>Welcome to Lantern</h1>
-        <p>Have you seen behavioural changes in your child and you want to know if such behaviours could
-            trigger any type of violence? <br/><br/>
-            Enter the words you think may fit with your child's behaviour:
-        </p>
-        <SearchBar 
-          handleInputChange={handleInputChange}
-          value={search}
-          handleSearchSubmit={handleSearchSubmit}
-        />
+      <p>Have you seen behavioural changes in your child and you want to know if such behaviours could
+          trigger any type of violence? <br/><br/>
+          Enter the words you think may fit with your child's behaviour:
+      </p>
+      <SearchBar 
+        handleInputChange={handleInputChange}
+        value={search}
+        handleSearchSubmit={handleSearchSubmit}
+      />
+      <div style={{ opacity: selectedBehaviors.length ? 1 : 0}}>
         <ul className="list-group">Selected behaviors (double click to remove from list):
           { selectedBehaviors.map(behavior => (
             <SelectedList
@@ -68,16 +66,17 @@ const Form = (props) => {
           ))}
         </ul>
 
-      {/*<form action="">
-        <input type="text" id="keywords" name="key_vals" placeholder="angry, boredom, violent"/>
-      </form>*/}
-      <Link 
-        className="navbar-brand" 
-        to="/results"
-      >
-          <button>Submit</button>
-          {/*After filling the form we'll submit the behavior traits to the backend, get the matches and then display them on the following page*/}
-      </Link>
+        {/*<form action="">
+          <input type="text" id="keywords" name="key_vals" placeholder="angry, boredom, violent"/>
+        </form>*/}
+        <Link 
+          className="navbar-brand" 
+          to="/results"
+        >
+            <button>Submit</button>
+            {/*After filling the form we'll submit the behavior traits to the backend, get the matches and then display them on the following page*/}
+        </Link>
+      </div>
     </section>
   )
 }
