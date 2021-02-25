@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import SelectedList from "../components/SelectedList";
 import Missions from '../components/Missions/Missions';
+import nsvlogo from '../nsv_logo.png';
 
 const Form = (props) => {
   const [search, setSearch] = useState("");
@@ -45,6 +46,7 @@ const Form = (props) => {
   return (
     <section className="mainframe">
       <h1>Welcome to Lantern</h1>
+      <img src={nsvlogo} alt={'NSV Logo'} width={"150px"} style={{marginBottom: "40px" }}/>
       <p>Have you seen behavioural changes in your child and you want to know if such behaviours could
           trigger any type of violence? <br/><br/>
           Enter the words you think may fit with your child's behaviour:
